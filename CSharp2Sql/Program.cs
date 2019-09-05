@@ -26,7 +26,7 @@ namespace CSharp2Sql {
             Debug.WriteLine(user3);
 
             var newuser = new Users();
-            newuser.Username = "AAAA1";
+            newuser.Username = "FFFF1";
             newuser.Password = "XYZ";
             newuser.Firstname = "Normal";
             newuser.Lastname = "newuser";
@@ -35,6 +35,14 @@ namespace CSharp2Sql {
             newuser.IsAdmin = false;
             newuser.IsReviewer = true;
             var success = Users.Insert(newuser);
+
+            var userabc = Users.GetByPk(5);
+            userabc.Username = "CCCC1";
+            userabc.Firstname = "A";
+            userabc.Lastname = "BC";
+            success = Users.Update(userabc);
+
+
             conn.Close();
         }
         static void Main(string[] args) {
