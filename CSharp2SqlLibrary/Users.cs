@@ -28,6 +28,7 @@ namespace CSharp2SqlLibrary {
             sqlcmd.Parameters.AddWithValue("@Email", (object)user.Email ?? DBNull.Value);
             sqlcmd.Parameters.AddWithValue("@IsAdmin", user.IsAdmin);
             sqlcmd.Parameters.AddWithValue("@IsReviewer", user.IsReviewer);
+            sqlcmd.Parameters.AddWithValue("@Id", user.Id);
             var rowsAffected = sqlcmd.ExecuteNonQuery();   //non query means not a SELECT statement
             return rowsAffected == 1;    // 1 returns True (it works), anyting else returns False
 
