@@ -21,6 +21,20 @@ namespace CSharp2Sql {
             var user = Users.GetByPk(1);
             Debug.WriteLine(user);
             var usernf = Users.GetByPk(222);  //no user found, should be null
+            //var success = Users.Delete(3);
+            var user3 = Users.GetByPk(3);  //check if delete on pk3 worked
+            Debug.WriteLine(user3);
+
+            var newuser = new Users();
+            newuser.Username = "AAAA1";
+            newuser.Password = "XYZ";
+            newuser.Firstname = "Normal";
+            newuser.Lastname = "newuser";
+            newuser.Phone = "5555555";
+            newuser.Email = "Abcd@gmail";
+            newuser.IsAdmin = false;
+            newuser.IsReviewer = true;
+            var success = Users.Insert(newuser);
             conn.Close();
         }
         static void Main(string[] args) {
