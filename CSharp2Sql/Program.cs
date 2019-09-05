@@ -16,6 +16,7 @@ namespace CSharp2Sql {
             var users = Users.GetAll();  //should bring back all users in db table
             foreach(var u in users) {
                 Console.WriteLine(u);
+
             }
             var user = Users.GetByPk(1);
             Debug.WriteLine(user);
